@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a No-Catch Strategy Call — Avocado Tree Digital</title>
+  <meta name="description" content="No decks, no pitches, no strings attached. Just an honest look at where your marketing is and where it could go." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" />
+  <link rel="icon" href="images/logo-avocado-tree.webp" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-body text-ink">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="py-20 lg:py-28">
+      <div class="max-w-content mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-16">
+        <!-- Left: pitch -->
+        <div class="reveal">
+          <p class="uppercase tracking-[0.2em] text-avocado-dark text-sm font-semibold mb-5">The no-catch strategy call</p>
+          <h1 class="font-heading font-bold text-4xl lg:text-5xl leading-[1.05] mb-6">Catch up with us. There's no catch to it</h1>
+          <p class="text-lg text-ink/70 leading-relaxed mb-8">
+            No decks, no pitches, no strings attached. Just a real, honest, hard look at where your marketing
+            is today and where it could go. From there, we'll share how we typically structure our work.
+          </p>
+          <ul class="space-y-4 text-ink/75">
+            <li class="flex gap-3"><span class="material-symbols-outlined text-avocado-dark">schedule</span>30 minutes, on your calendar</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-avocado-dark">public</span>Singapore &amp; India · we work across time zones</li>
+            <li class="flex gap-3"><span class="material-symbols-outlined text-avocado-dark">handshake</span>One team, one point of accountability</li>
+          </ul>
+          <div class="mt-10 pt-8 border-t border-black/10 text-sm text-ink/60">
+            Prefer email? <a href="mailto:hello@avocadotree.digital" class="text-avocado-dark font-semibold link-underline">hello@avocadotree.digital</a>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal bg-cream p-8 lg:p-10 ring-1 ring-black/5">
+          <form id="contact-form" class="space-y-5" novalidate>
+            <div>
+              <label class="block text-sm font-semibold mb-1.5" for="name">Name</label>
+              <input id="name" name="name" type="text" required class="w-full border border-black/15 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-avocado" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1.5" for="email">Work email</label>
+              <input id="email" name="email" type="email" required class="w-full border border-black/15 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-avocado" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1.5" for="company">Company</label>
+              <input id="company" name="company" type="text" class="w-full border border-black/15 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-avocado" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1.5" for="type">What best describes you?</label>
+              <select id="type" name="type" class="w-full border border-black/15 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-avocado">
+                <option>Professional services firm</option>
+                <option>Growth-focused brand</option>
+                <option>Government enterprise</option>
+                <option>CMO with a team gap</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1.5" for="message">What's on your mind?</label>
+              <textarea id="message" name="message" rows="4" class="w-full border border-black/15 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-avocado"></textarea>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 btn-avocado">
+              Contact <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            </button>
+            <p id="form-status" class="text-sm text-avocado-dark font-medium hidden">Thanks — we'll be in touch within one business day.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!this.checkValidity()) { this.reportValidity(); return; }
+      document.getElementById("form-status").classList.remove("hidden");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

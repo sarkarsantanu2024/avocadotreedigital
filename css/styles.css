@@ -1,0 +1,233 @@
+/* ===== Avocado Tree Digital — custom styles ===== */
+
+:root {
+  --avocado: #8DC63F;
+  --avocado-dark: #6FA52E;
+  --ink: #0D0F0C;
+}
+
+/* ===== Primary button — matches legacy avocadotreedigital.com ===== */
+/* Legacy spec: bg #8cc63f, white text, Libre Franklin 15px/500,
+   padding 21px 34px, square corners, no uppercase. */
+.btn-avocado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--avocado);
+  color: #fff;
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 21px 34px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.btn-avocado:hover { background-color: var(--avocado-dark); color: #fff; }
+
+/* Compact variant for header / footer */
+.btn-avocado-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--avocado);
+  color: #fff;
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 13px 26px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.btn-avocado-sm:hover { background-color: var(--avocado-dark); color: #fff; }
+
+html { scroll-behavior: smooth; }
+
+/* Site footer: pure black background */
+#site-footer footer { background-color: #000; }
+
+body {
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  color: #1A1D18;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, .font-heading {
+  font-family: 'Mulish', 'Century Gothic', Futura, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Material Symbols sizing helper */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Hero overlay so white text stays legible over imagery */
+.hero-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(13,15,12,.22) 0%, rgba(13,15,12,.45) 100%),
+    linear-gradient(180deg, rgba(13,15,12,.35) 0%, rgba(13,15,12,.28) 40%, rgba(13,15,12,.5) 100%);
+  z-index: 0;
+}
+.hero-overlay > * { position: relative; z-index: 1; }
+
+/* Hero text legibility over photography */
+.hero-banner h1,
+.hero-banner > div > p { text-shadow: 0 2px 16px rgba(0, 0, 0, .45); }
+
+/* Home hero banner photo — rendered black & white (client request) */
+.hero-banner,
+.skywriter-banner {
+  position: relative;
+  isolation: isolate; /* own stacking context so the z-index:-1 image sits above the bg, below the text */
+  background-color: #0D0F0C;
+}
+.hero-banner::after,
+.skywriter-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  z-index: -1;
+}
+.hero-banner::after { background-image: url("../images/hero-banner.jpg"); }
+.skywriter-banner::after { background-image: url("../images/home/hompage-board-room.jpeg"); }
+
+/* Partner logo strip — continuous auto-scrolling carousel (Squarespace-style)
+   with prev/next controls. Track holds two identical logo sets so the scroll
+   loops seamlessly; auto-scroll pauses on hover. Driven by js/main.js. */
+.logo-carousel { position: relative; }
+.logo-viewport {
+  overflow-x: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.logo-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: max-content;
+}
+.logo-track img {
+  flex: 0 0 auto;
+  margin-right: 4rem;
+}
+/* Square prev/next controls, matching the no-rounded-corner theme */
+.logo-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, .12);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.logo-nav:hover { background: var(--avocado); color: #fff; border-color: var(--avocado); }
+.logo-prev { left: 0; }
+.logo-next { right: 0; }
+
+/* Fallback hero texture when image not yet supplied */
+.hero-fallback {
+  background-color: #0D0F0C;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(141,198,63,.18), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(141,198,63,.10), transparent 50%),
+    url("../images/hero-grass.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Underline-on-hover for nav + footer links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--avocado);
+  transition: width .25s ease;
+}
+.link-underline:hover::after { width: 100%; }
+
+/* Dropdown menu */
+.has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown {
+  opacity: 0; visibility: hidden;
+  transform: translateY(6px);
+  transition: all .18s ease;
+}
+
+/* Logo strip greyscale */
+.logo-strip img {
+  filter: grayscale(100%);
+  opacity: .55;
+  transition: opacity .25s ease, filter .25s ease;
+}
+.logo-strip img:hover { filter: grayscale(0); opacity: 1; }
+
+/* Reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Hero headline: hand-drawn scratch-out over "on the other side" */
+.scratch {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.scratch-svg {
+  position: absolute;
+  left: -5%;
+  top: 50%;
+  width: 110%;
+  height: 0.72em;
+  transform: translateY(-50%) rotate(-1.2deg);
+  overflow: visible;
+  pointer-events: none;
+}
+.scratch-svg path {
+  fill: none;
+  stroke: var(--avocado);
+  stroke-width: 4;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35));
+}
+
+/* Hero headline: "when we work together" set apart as a script-style line */
+.hero-script {
+  font-style: italic;
+  font-weight: 600;
+  display: inline-block;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+}
+
+/* Footer logo rendered white on dark background */
+.logo-light { filter: brightness(0) invert(1); }
