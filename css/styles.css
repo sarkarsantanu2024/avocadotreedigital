@@ -255,13 +255,20 @@
     background:linear-gradient(180deg,rgba(246,247,241,.55),rgba(246,247,241,.86));
     backdrop-filter:blur(2px);border-radius:6px}
   #priceGrid:not(.locked) .gate{display:none}
-  #priceGrid:not(.locked) .gate.success{display:grid}
-  .gate-success{text-align:center}
-  .gate-success[hidden]{display:none}
-  .gate-success .success-check{width:58px;height:58px;border-radius:50%;display:grid;
-    place-items:center;margin:0 auto 16px;background:var(--lime);color:var(--ink);
-    font-family:var(--mont);font-size:1.8rem;font-weight:800}
-  .gate-success .btn{width:100%;justify-content:center;margin-top:8px}
+  .success-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;
+    padding:20px;background:rgba(10,18,13,.68);backdrop-filter:blur(5px)}
+  .success-modal[hidden]{display:none}
+  .success-card{width:min(430px,100%);padding:38px 34px;border-radius:7px;
+    background:var(--ink);color:var(--paper);text-align:center;
+    box-shadow:0 30px 80px rgba(10,18,13,.45)}
+  .success-card h3{color:#fff;font-size:1.65rem;margin:16px 0 10px}
+  .success-card p{color:#B9C4B1;margin-bottom:24px}
+  .success-check{width:58px;height:58px;border-radius:50%;display:block;
+    position:relative;margin:0 auto;background:var(--lime)}
+  .success-check::after{content:"";position:absolute;left:18px;top:14px;
+    width:17px;height:27px;border:solid var(--ink);border-width:0 5px 5px 0;
+    transform:rotate(45deg)}
+  .success-card .btn{width:100%;justify-content:center}
   .success-close{margin-top:16px;border:0;background:none;color:#B9C4B1;
     font:600 .84rem var(--mont);text-decoration:underline;cursor:pointer}
   .success-close:hover{color:#fff}
@@ -396,3 +403,17 @@
     .reveal{opacity:1;transform:none}
     .marquee ul{animation:none;transform:none}
   }
+
+/* ---------- back to top ---------- */
+.back-to-top{position:fixed;right:24px;bottom:24px;z-index:900;width:48px;height:48px;
+  display:grid;place-items:center;border:0;border-radius:50%;background:var(--cta);
+  box-shadow:0 10px 28px rgba(21,32,25,.25);cursor:pointer;opacity:0;visibility:hidden;
+  transform:translateY(12px);transition:opacity .2s,transform .2s,visibility .2s,background .2s}
+.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{background:var(--ink)}
+.back-to-top:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.back-to-top span{width:13px;height:13px;border:solid #fff;border-width:3px 0 0 3px;
+  transform:rotate(45deg) translate(2px,2px)}
+@media(max-width:600px){
+  .back-to-top{right:16px;bottom:16px;width:44px;height:44px}
+}

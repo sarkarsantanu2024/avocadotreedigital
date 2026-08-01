@@ -35,11 +35,8 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 // ---- gated pricing ----
 const grid = document.getElementById("priceGrid");
 grid.classList.add("locked");
-const gate = document.getElementById("gate");
-const gateIntro = document.getElementById("gateIntro");
-const gateSuccess = document.getElementById("gateSuccess");
+const successModal = document.getElementById("successModal");
 const successClose = document.getElementById("successClose");
-const successDownload = document.getElementById("successDownload");
 const gForm = document.getElementById("gateForm");
 const gErr = document.getElementById("gateErr");
 const uRow = document.getElementById("unlockedRow");
@@ -64,7 +61,7 @@ gForm.addEventListener("submit", async (e) => {
   const name = (f.get("name") || "").toString().trim();
   const email = (f.get("email") || "").toString().trim();
   const company = (f.get("company") || "").toString().trim();
-  const emailOk = /^[^s@]+@[^s@]+.[^s@]+$/.test(email);
+  const emailOk = gForm.elements.email.validity.valid;
 
   if (!name || !company || !emailOk) {
     gErr.textContent = !name
@@ -82,12 +79,8 @@ gForm.addEventListener("submit", async (e) => {
   try {
     await submitGateForm({ name, email, company });
     grid.classList.remove("locked");
-    gate.classList.add("success");
-    gateIntro.hidden = true;
-    gForm.hidden = true;
-    gateSuccess.hidden = false;
+    successModal.hidden = false;
     uRow.hidden = false;
-    successDownload.click();
   } catch (err) {
     console.error(err);
     gErr.textContent =
@@ -99,7 +92,7 @@ gForm.addEventListener("submit", async (e) => {
 });
 
 successClose.addEventListener("click", () => {
-  gate.classList.remove("success");
+  successModal.hidden = true;
   uRow.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 // count-up stats
@@ -127,3 +120,17 @@ const cio = new IntersectionObserver(
   { threshold: 0.5 },
 );
 document.querySelectorAll(".num").forEach((el) => cio.observe(el));
+
+// back to top
+const backToTop = document.getElementById("backToTop");
+const updateBackToTop = () => {
+  backToTop.classList.toggle("visible", window.scrollY > 500);
+};
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: reduce ? "auto" : "smooth",
+  });
+});
+updateBackToTop();
