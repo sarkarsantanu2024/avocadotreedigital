@@ -57,8 +57,9 @@
   .brand small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.14em;
     text-transform:uppercase;color:var(--muted);margin-top:1px}
   .navlinks{display:flex;gap:30px;align-items:center;font-family:var(--mont);font-weight:600;font-size:.86rem}
-  .navlinks a{color:var(--ink-2);opacity:.8;transition:opacity .2s}
+  .navlinks a{color:#fff;opacity:.9;transition:opacity .2s}
   .navlinks a:hover{opacity:1}
+  nav.scrolled .navlinks a{color:var(--ink-2)}
   .btn{
     font-family:var(--mont);font-weight:700;font-size:.86rem;letter-spacing:.01em;
     background:var(--cta);color:#fff;padding:12px 22px;border-radius:2px;
@@ -82,7 +83,7 @@
     position:relative;
   }
   .hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-    background-image:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.78) 40%,rgba(0,0,0,.42) 100%),url("../assets/hero-wheat.webp");
+    background-image:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.78) 40%,rgba(0,0,0,.42) 100%),url("../assets/images/hero-wheat.webp");
     background-size:cover;background-position:center right}
   .hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
     background:radial-gradient(120% 80% at 78% 0%,rgba(255,255,255,.06),transparent 62%)}
@@ -94,8 +95,8 @@
   .band.has-bg > .wrap{position:relative;z-index:2}
   .band.has-bg::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
     background-size:cover;background-position:center}
-  #problem.has-bg::before{background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.82) 55%,rgba(10,15,12,.9) 100%),url("../assets/valueprop-treetrunk.webp");}
-  #results.has-bg::before{background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.8) 50%,rgba(10,15,12,.92) 100%),url("../assets/advantage-mushroom.webp")}
+  #problem.has-bg::before{background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.82) 55%,rgba(10,15,12,.9) 100%),url("../assets/images/valueprop-treetrunk.webp");}
+  #results.has-bg::before{background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.8) 50%,rgba(10,15,12,.92) 100%),url("../assets/images/advantage-mushroom.webp")}
   .wordmark{font-family:var(--mont);font-weight:700;letter-spacing:-.03em;
     font-size:clamp(2.47rem,6.3vw,5.19rem);line-height:.98}
   .wordmark .toggle{display:inline-block;position:relative;color:#fff}
@@ -254,6 +255,16 @@
     background:linear-gradient(180deg,rgba(246,247,241,.55),rgba(246,247,241,.86));
     backdrop-filter:blur(2px);border-radius:6px}
   #priceGrid:not(.locked) .gate{display:none}
+  #priceGrid:not(.locked) .gate.success{display:grid}
+  .gate-success{text-align:center}
+  .gate-success[hidden]{display:none}
+  .gate-success .success-check{width:58px;height:58px;border-radius:50%;display:grid;
+    place-items:center;margin:0 auto 16px;background:var(--lime);color:var(--ink);
+    font-family:var(--mont);font-size:1.8rem;font-weight:800}
+  .gate-success .btn{width:100%;justify-content:center;margin-top:8px}
+  .success-close{margin-top:16px;border:0;background:none;color:#B9C4B1;
+    font:600 .84rem var(--mont);text-decoration:underline;cursor:pointer}
+  .success-close:hover{color:#fff}
   .gate-card{background:var(--ink);color:var(--paper);border-radius:6px;padding:36px 34px;
     max-width:440px;width:calc(100% - 40px);box-shadow:0 30px 70px rgba(21,32,25,.3)}
   .gate-card .eyebrow{color:#fff}
@@ -326,7 +337,7 @@
   /* ---------- final cta ---------- */
   .final{background:var(--ink);color:var(--paper);text-align:center;padding:110px 0;position:relative;overflow:hidden}
   .final::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.78) 50%,rgba(10,15,12,.92) 100%),url("../assets/cta-lens.webp");
+    background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.78) 50%,rgba(10,15,12,.92) 100%),url("../assets/images/cta-lens.webp");
     background-size:cover;background-position:center}
   .final::after{content:"";position:absolute;inset:0;z-index:1;
     background:radial-gradient(90% 120% at 50% 120%,rgba(163,212,95,.16),transparent 60%);pointer-events:none}

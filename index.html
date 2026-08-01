@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>(A)Intelligent Digital Growth System™ · Avocado Tree Digital</title>
+<title>(A)Intelligent Digital Growth SystemÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ Ãƒâ€šÃ‚Â· Avocado Tree Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
 <!-- ============ NAV ============ -->
 <nav id="nav">
   <a class="brand" href="#top">
-    <img class="brand-logo light" src="assets/logo-white.webp" alt="Avocado Tree Digital">
-    <img class="brand-logo dark" src="assets/logo-dark.webp" alt="Avocado Tree Digital">
+    <img class="brand-logo light" src="assets/images/logo-white.webp" alt="Avocado Tree Digital">
+    <img class="brand-logo dark" src="assets/images/logo-dark.webp" alt="Avocado Tree Digital">
   </a>
   <div class="navlinks">
     <a href="#system">The System</a>
@@ -25,17 +25,17 @@
     <a href="#faq">FAQ</a>
   </div>
   <div class="nav-cta">
-    <a class="btn" href="#book">Book a Strategy Call →</a>
+    <a class="btn" href="#book">Book a Strategy Call ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a>
   </div>
 </nav>
 
 <!-- ============ HERO ============ -->
 <header class="hero on-ink" id="top">
   <div class="wrap">
-    <h1 class="wordmark" style="margin-top:8px"><span class="toggle" id="toggle" aria-live="polite">(<b id="ah">H</b>)</span>Intelligent Digital<br>Growth System<span style="font-size:.4em;vertical-align:.9em">™</span></h1>
+    <h1 class="wordmark" style="margin-top:8px"><span class="toggle" id="toggle" aria-live="polite">(<b id="ah">H</b>)</span>Intelligent Digital<br>Growth System<span style="font-size:.4em;vertical-align:.9em">ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢</span></h1>
     <p class="hero-sub">Revitalise your digital efforts for better outcomes.</p>
     <div class="hero-cta">
-      <a class="btn" href="#book">Book a Strategy Call →</a>
+      <a class="btn" href="#book">Book a Strategy Call ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a>
       <a class="btn ghost" href="#system">See how it works</a>
     </div>
     <div class="hero-meta">
@@ -117,17 +117,17 @@
     </div>
     <div class="bring-row reveal">
       <div class="bring-item">
-        <div class="bring-tag">01 · Strategy</div>
+        <div class="bring-tag">01 Ãƒâ€šÃ‚Â· Strategy</div>
         <h3>We set the direction</h3>
         <p>Senior strategists shape where to play and how to win, so every effort ladders up to growth, not just activity.</p>
       </div>
       <div class="bring-item">
-        <div class="bring-tag">02 · Services</div>
+        <div class="bring-tag">02 Ãƒâ€šÃ‚Â· Services</div>
         <h3>We do the work</h3>
         <p>A full delivery team plus AI agents executing across marketing, content and campaigns, at pace.</p>
       </div>
       <div class="bring-item">
-        <div class="bring-tag">03 · Accountability</div>
+        <div class="bring-tag">03 Ãƒâ€šÃ‚Â· Accountability</div>
         <h3>We own the outcome</h3>
         <p>One partner measured on your results, with clear KPIs and transparent monthly reviews.</p>
       </div>
@@ -277,17 +277,27 @@
       <!-- gate overlay -->
       <div class="gate" id="gate">
         <div class="gate-card">
-          <span class="eyebrow">Full pricing &amp; scope</span>
-          <h3>Get the pricing guide</h3>
-          <p>See full monthly pricing, what each tier includes, and the outcomes we commit to. We will send the guide and unlock pricing on this page.</p>
+          <div id="gateIntro">
+            <span class="eyebrow">Full pricing &amp; scope</span>
+            <h3>Get the pricing guide</h3>
+            <p>See full monthly pricing, what each tier includes, and the outcomes we commit to. We will send the guide and unlock pricing on this page.</p>
+          </div>
           <form id="gateForm" novalidate>
             <label>Name<input type="text" name="name" required autocomplete="name" placeholder="Your name"></label>
             <label>Work email<input type="email" name="email" required autocomplete="email" placeholder="you@company.com"></label>
             <label>Company<input type="text" name="company" required autocomplete="organization" placeholder="Company name"></label>
             <button class="btn" type="submit">Unlock pricing &amp; download guide</button>
             <span class="gate-fine">No spam. We use this only to send your guide and follow up once.</span>
-            <span class="gate-err" id="gateErr"></span>
+            <span class="gate-err" id="gateErr" role="alert"></span>
           </form>
+          <div class="gate-success" id="gateSuccess" hidden>
+            <span class="success-check" aria-hidden="true">Ã¢Å“â€œ</span>
+            <h3>Thank you!</h3>
+            <p>Your details have been saved successfully. Your growth system guide is ready.</p>
+            <a class="btn" id="successDownload" href="assets/ATD_AIntelligent_Digital_Growth_System_V9.pptx"
+              download="ATD_AIntelligent_Digital_Growth_System_V9.pptx">Download the guide &darr;</a>
+            <button class="success-close" id="successClose" type="button">Continue to pricing</button>
+          </div>
         </div>
       </div>
 
@@ -296,7 +306,7 @@
         <div>
           <b>Pricing unlocked.</b> Your guide is ready to download.
         </div>
-        <a class="btn" id="downloadBtn" download="ATD-IGS-Pricing-Guide.txt">Download the pricing guide ↓</a>
+        <a class="btn" id="downloadBtn" href="assets/ATD_AIntelligent_Digital_Growth_System_V9.pptx" download="ATD_AIntelligent_Digital_Growth_System_V9.pptx">Download the pricing guide &darr;</a>
       </div>
     </div>
   </div>
@@ -324,8 +334,8 @@
 <section class="final" id="book">
   <div class="wrap">
     <h2>Stop managing chaos.<br>Start compounding <em>growth.</em></h2>
-    <p>Let's discuss how the (A)Intelligent Digital Growth System™ becomes your unfair advantage in the market.</p>
-    <a class="btn" href="mailto:hello@avocadotreedigital.com" style="font-size:1rem;padding:16px 30px">Book a Strategy Call →</a>
+    <p>Let's discuss how the (A)Intelligent Digital Growth SystemÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ becomes your unfair advantage in the market.</p>
+    <a class="btn" href="mailto:hello@avocadotreedigital.com" style="font-size:1rem;padding:16px 30px">Book a Strategy Call ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a>
   </div>
 </section>
 
@@ -334,16 +344,16 @@
   <div class="wrap">
     <div class="row">
       <a class="brand" href="#top" style="align-items:flex-start">
-        <img class="brand-logo footer-logo" src="assets/logo-white.webp" alt="Avocado Tree Digital">
+        <img class="brand-logo footer-logo" src="assets/images/logo-white.webp" alt="Avocado Tree Digital">
       </a>
       <div class="cols">
         <div><h4>Explore</h4><a href="#system">The System</a><a href="#who">Who It's For</a><a href="#pricing">Pricing</a></div>
         <div><h4>Learn</h4><a href="https://www.avocadotreedigital.com/the-pit-blog">Articles</a><a href="#faq">FAQ</a><a href="#testimonials">Client Stories</a></div>
-        <div><h4>Get in touch</h4><a class="btn footer-cta" href="#book">Book a strategy call →</a></div>
+        <div><h4>Get in touch</h4><a class="btn footer-cta" href="#book">Book a strategy call ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a></div>
       </div>
     </div>
     <div class="fine">
-      <span>© 2026 Avocado Tree Digital · (A)Intelligent Digital Growth System™</span>
+      <span>Ãƒâ€šÃ‚Â© 2026 Avocado Tree Digital Ãƒâ€šÃ‚Â· (A)Intelligent Digital Growth SystemÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢</span>
     </div>
   </div>
 </footer>

@@ -1,0 +1,16 @@
+{
+  "name": "avocado-tree-digital",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env.local server.js",
+    "start": "node --env-file-if-exists=.env.local server.js"
+  },
+  "dependencies": {
+    "pg": "^8.14.0"
+  },
+  "devDependencies": {
+    "vercel": "^58.4.4"
+  }
+}
