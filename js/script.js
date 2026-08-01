@@ -34,13 +34,36 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
 // ---- gated pricing ----
 const grid = document.getElementById("priceGrid");
-grid.classList.add("locked");
 const successModal = document.getElementById("successModal");
 const successClose = document.getElementById("successClose");
 const gForm = document.getElementById("gateForm");
 const gErr = document.getElementById("gateErr");
 const uRow = document.getElementById("unlockedRow");
 const submitButton = gForm.querySelector('button[type="submit"]');
+const pricingUnlockKey = "atdPricingUnlocked";
+
+function pricingWasUnlocked() {
+  try {
+    return localStorage.getItem(pricingUnlockKey) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function rememberPricingUnlock() {
+  try {
+    localStorage.setItem(pricingUnlockKey, "true");
+  } catch {
+    // Storage may be unavailable in privacy-restricted browsers.
+  }
+}
+
+if (pricingWasUnlocked()) {
+  grid.classList.remove("locked");
+  uRow.hidden = false;
+} else {
+  grid.classList.add("locked");
+}
 
 async function submitGateForm(data) {
   const res = await fetch("/api/form-submit", {
@@ -78,6 +101,7 @@ gForm.addEventListener("submit", async (e) => {
 
   try {
     await submitGateForm({ name, email, company });
+    rememberPricingUnlock();
     grid.classList.remove("locked");
     successModal.hidden = false;
     uRow.hidden = false;
