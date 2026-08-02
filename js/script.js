@@ -115,9 +115,18 @@ gForm.addEventListener("submit", async (e) => {
   }
 });
 
-successClose.addEventListener("click", () => {
+function closeSuccessModal() {
+  if (successModal.hidden) return;
   successModal.hidden = true;
   uRow.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+successClose.addEventListener("click", closeSuccessModal);
+successModal.addEventListener("click", (e) => {
+  if (e.target === successModal) closeSuccessModal();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeSuccessModal();
 });
 // count-up stats
 const cio = new IntersectionObserver(

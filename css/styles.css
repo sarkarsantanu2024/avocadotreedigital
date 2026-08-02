@@ -56,7 +56,7 @@
   .footer-logo{height:30px}
   .brand small{display:block;font-weight:500;font-size:.66rem;letter-spacing:.14em;
     text-transform:uppercase;color:var(--muted);margin-top:1px}
-  .navlinks{display:flex;gap:30px;align-items:center;font-family:var(--mont);font-weight:600;font-size:.86rem}
+  .navlinks{display:flex;gap:30px;align-items:center;font-family:var(--mont);font-weight:600;font-size:.95rem}
   .navlinks a{color:#fff;opacity:.9;transition:opacity .2s}
   .navlinks a:hover{opacity:1}
   nav.scrolled .navlinks a{color:var(--ink-2)}
@@ -74,6 +74,7 @@
   .on-ink .btn.ghost{color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
   .on-ink .btn.ghost:hover{background:var(--paper);color:var(--ink)}
   .nav-cta{display:flex;gap:14px;align-items:center}
+  .nav-cta .btn{font-size:.95rem}
   nav:not(.scrolled) .nav-cta .btn{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
   nav:not(.scrolled) .nav-cta .btn:hover{box-shadow:inset 0 0 0 1.5px #fff}
 
@@ -98,7 +99,7 @@
   #problem.has-bg::before{background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.82) 55%,rgba(10,15,12,.9) 100%),url("../assets/images/valueprop-treetrunk.webp");}
   #results.has-bg::before{background-image:linear-gradient(180deg,rgba(10,15,12,.9) 0%,rgba(10,15,12,.8) 50%,rgba(10,15,12,.92) 100%),url("../assets/images/advantage-mushroom.webp")}
   .wordmark{font-family:var(--mont);font-weight:700;letter-spacing:-.03em;
-    font-size:clamp(2.47rem,6.3vw,5.19rem);line-height:.98}
+    font-size:clamp(1.98rem,5.04vw,4.15rem);line-height:.98}
   .wordmark .toggle{display:inline-block;position:relative;color:#fff}
   .wordmark .toggle b{font-weight:700}
   .cursor{display:inline-block;width:.06em;height:.86em;background:#fff;
@@ -258,7 +259,7 @@
   .success-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;
     padding:20px;background:rgba(10,18,13,.68);backdrop-filter:blur(5px)}
   .success-modal[hidden]{display:none}
-  .success-card{width:min(430px,100%);padding:38px 34px;border-radius:7px;
+  .success-card{position:relative;width:min(430px,100%);padding:38px 34px;border-radius:7px;
     background:var(--ink);color:var(--paper);text-align:center;
     box-shadow:0 30px 80px rgba(10,18,13,.45)}
   .success-card h3{color:#fff;font-size:1.65rem;margin:16px 0 10px}
@@ -269,9 +270,11 @@
     width:17px;height:27px;border:solid var(--ink);border-width:0 5px 5px 0;
     transform:rotate(45deg)}
   .success-card .btn{width:100%;justify-content:center}
-  .success-close{margin-top:16px;border:0;background:none;color:#B9C4B1;
-    font:600 .84rem var(--mont);text-decoration:underline;cursor:pointer}
-  .success-close:hover{color:#fff}
+  .success-close{position:absolute;top:10px;right:12px;width:34px;height:34px;
+    border:0;background:none;color:#B9C4B1;font:400 1.7rem/1 var(--mont);
+    cursor:pointer;border-radius:50%;transition:color .2s,background .2s}
+  .success-close:hover{color:#fff;background:rgba(255,255,255,.1)}
+  .success-close:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
   .gate-card{background:var(--ink);color:var(--paper);border-radius:6px;padding:36px 34px;
     max-width:440px;width:calc(100% - 40px);box-shadow:0 30px 70px rgba(21,32,25,.3)}
   .gate-card .eyebrow{color:#fff}

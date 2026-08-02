@@ -98,10 +98,13 @@ function buildLeadEmailHtml({ name, email, company, createdAt }) {
 
 async function sendLeadNotification(lead) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_NOTIFICATION_EMAIL;
   const from = process.env.EMAIL_FROM;
+  const to = (process.env.LEAD_NOTIFICATION_EMAIL || "")
+    .split(",")
+    .map((address) => address.trim())
+    .filter(Boolean);
 
-  if (!apiKey || !to || !from) {
+  if (!apiKey || !to.length || !from) {
     console.warn("Resend not configured; skipping lead notification email.");
     return;
   }
