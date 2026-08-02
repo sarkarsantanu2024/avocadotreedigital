@@ -1,0 +1,26 @@
+Squarespace legacy site backup
+Source: https://www.avocadotreedigital.com
+
+https://www.avocadotreedigital.com/the-blog                            the-blog.html                                 104354 bytes
+https://www.avocadotreedigital.com/the-blog/category/Inbound+Marketing the-blog_category_Inbound_Marketing.html      104686 bytes
+https://www.avocadotreedigital.com/the-blog/category/Content+Marketing the-blog_category_Content_Marketing.html      104686 bytes
+https://www.avocadotreedigital.com/the-blog/category/Digital+Strategy  the-blog_category_Digital_Strategy.html       104676 bytes
+https://www.avocadotreedigital.com/home                                home.html                                     120811 bytes
+https://www.avocadotreedigital.com/term-and-conditions                 term-and-conditions.html                      108616 bytes
+https://www.avocadotreedigital.com/connect                             connect.html                                  132952 bytes
+https://www.avocadotreedigital.com/ourwork                             ourwork.html                                  273117 bytes
+https://www.avocadotreedigital.com/partners                            partners.html                                 130234 bytes
+https://www.avocadotreedigital.com/purpose                             purpose.html                                  125309 bytes
+https://www.avocadotreedigital.com/consulting-services                 consulting-services.html                      164532 bytes
+https://www.avocadotreedigital.com/people                              people.html                                   115663 bytes
+https://www.avocadotreedigital.com/consumer-brands                     consumer-brands.html                          150613 bytes
+https://www.avocadotreedigital.com/professional-services               professional-services.html                    146509 bytes
+https://www.avocadotreedigital.com/government-and-non-profits          government-and-non-profits.html               154638 bytes
+https://www.avocadotreedigital.com/d2c-consulting-implementation       d2c-consulting-implementation.html            161424 bytes
+https://www.avocadotreedigital.com/startups                            startups.html                                 144648 bytes
+https://www.avocadotreedigital.com/visual-design-contentinbound-marketing-services visual-design-contentinbound-marketing-services.html 162186 bytes
+https://www.avocadotreedigital.com/digital-strategy-consulting-1       digital-strategy-consulting-1.html            140918 bytes
+https://www.avocadotreedigital.com/cbetter                             cbetter.html                                  167294 bytes
+https://www.avocadotreedigital.com/new-page-1                          new-page-1.html                               107219 bytes
+
+Assets archived: 77
