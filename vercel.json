@@ -39,5 +39,12 @@
     { "source": "/e-commerce-enablement", "destination": "/#system", "permanent": true },
     { "source": "/visual-design-content", "destination": "/#system", "permanent": true },
     { "source": "/search", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
   ]
 }
